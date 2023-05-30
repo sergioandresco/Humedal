@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+/* Estilos generales de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Estilos del track (fondo) de la barra de desplazamiento */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* Estilos del thumb (barra de desplazamiento) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  /* Estilos del thumb al estar en estado hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+
 :root {
     --padding-container: 100px 0;
     --color-title: #001A49;
@@ -36,7 +58,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/JUAN-AMARILLO.jpg');
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/foto_banner.jpg');
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
     z-index: -1;
@@ -62,7 +84,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/JUAN-AMARILLO.jpg');
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/foto_banner.jpg');
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 67%, 50% 89%, 0 67%);
     z-index: -1;
@@ -428,6 +450,47 @@ body{
     width: 30px;
 }
 
+.container_fotos{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.led-sign {
+    background-color: LIGHTSEAGREEN;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+.led-text {
+    font-family: 'Courier New', monospace;
+    font-weight: bolder;
+    font-size: 24px;
+    color: WHITE;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    white-space: nowrap;
+    animation: move 10s linear infinite;
+}
+  
+@keyframes move {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width:800px){
@@ -665,23 +728,55 @@ body{
     object-fit: cover;
   }
 
-#video{
-    margin-bottom: 80px;
-    margin-left: 29%;
+
+.container_noticias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 47px;
+    gap: 75px;
 }
 
 .noticias{
-    display: grid;
-    justify-items: center;
-    grid-gap: 24.5px;
-    margin-left: 29px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    background: #94a16d;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    border: 6px solid yellowgreen;
 }
 
 .tittle_noticia{
-    font-size: 40px;
+    font-size: 2.5em;
+    color: white;
+    text-decoration: underline;
 }
 
+.tittle_video{
+    font-size: 2.5em;
+    color: black;
+    text-decoration: underline;
+}
+
+.txt_noticia{
+    background: #94a16d;
+    display: flex;
+    padding: 50px;
+    border-bottom: 9px solid wheat;
+}
+
+.txt{
+    font-size: 1.3em;
+    text-align: justify;
+}
+
+.img_noticia{
+    border: 2px solid black;
+}
 
 #picture{
     height: 501px;
